@@ -15,7 +15,7 @@ butto.addEventListener('click',(event)=>{
         audio.currentTime= 0.2;
         audio.play();
 
-        loader.style.display='block';
+        loader.style.display='flex';
        audio.onended = function () {
             window.location.href = "deep3.html";
         };
