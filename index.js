@@ -20,6 +20,7 @@ butto.addEventListener('click',(event)=>{
 
     }else{
         alert("fill the box please")
+        loader.style.display='hidden';
     }
     
    
