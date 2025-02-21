@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mainframe Access v4.5</title>
+    <style>
+        :root {
+            --neon-green: #0f0;
+            --neon-blue: #08f;
+            --dark-bg: #000;
+            --glow: 0 0 10px;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--neon-green);
+            font-family: 'Courier New', monospace;
+            padding: 2rem;
+        }
+
+        .mainframe-container {
+            border: 3px solid var(--neon-green);
+            box-shadow: 0 0 30px var(--neon-green);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(0, 20, 0, 0.5);
+        }
+
+        .status-item {
+            position: relative;
+            padding: 1rem;
+            border-left: 3px solid var(--neon-green);
+        }
+
+        .search-bar {
+            background: transparent;
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            padding: 1rem;
+            width: 100%;
+            margin: 2rem 0;
+            font-family: inherit;
+        }
+
+        .data-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .cyber-glitch {
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: var(--glow) var(--neon-green); }
+            25% { transform: skew(5deg); }
+            50% { text-shadow: -2px 0 var(--neon-blue), 2px 0 var(--neon-green); }
+            75% { transform: skew(-5deg); }
+        }
+
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 255, 0, 0.3);
+            animation: scan 3s linear infinite;
+            animation-delay:-2s;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+
+
+
+
+
+
+        /* 0000 */
+        #ghonta{
+            font-size: 100px;
+            text-transform:capitalize;
+            font-family: sans-serif;
+            font-weight:bold;
+            text-align:center;
+            padding:44px 0;
+            position: relative;
+        }
+
+        #ghonta img{
+            width:320px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            border-radius:50%;
+                transform:translate(0%, -100%);
+                animation-name: hi;
+                animation-duration: 3s;
+                animation-delay: 2s;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+
+                opacity: 0;
+        }
+
+        @keyframes hi{
+            0%{
+
+                opacity: 0;
+
+            }
+
+            40%{
+                opacity: 1;
+                transform: translate(0% , -50%);
+            }
+            90%{
+                opacity: 1;
+                
+            }
+            100%{
+                opacity: 0;
+                transform: translate(-50% , -50%);
+            }
+        }
+
+
+
+
+        /* media  */
+
+        @media all and (max-width:800px){
+            h1{
+                font-size: 30px;
+            }
+
+            #ghonta{
+            font-size: 40px;
+            text-transform:capitalize;
+            font-family: sans-serif;
+            font-weight:bold;
+            text-align:center;
+            padding:44px 0;
+            position: relative;
+        }
+
+        #ghonta img{
+            width:120px;
+        }  };
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="mainframe-container">
+        <div class="scan-line"></div>
+        
+        <h1 class="cyber-glitch">> MAINFRAME ACCESS</h1>
+        
+        <div class="status-panel">
+            <div class="status-item">
+                CPU: <span id="cpu-load">87%</span>
+                <div class="progress-bar"></div>
+            </div>
+            <div class="status-item">
+                TRAFFIC: <span id="network-traffic">4.8Gbit/s</span>
+                <div class="signal-strength"></div>
+            </div>
+            <div class="status-item">
+                TEMP: <span id="sys-temp">66°C</span>
+                <div class="temp-gauge"></div>
+            </div>
+        </div>
+
+        <!-- <input type="text" class="search-bar" placeholder="> ENTER SEARCH PARAMETERS..."> -->
+
+        <div id="ghonta">
+            <p>you aren't hacked bro!!🍖</p> 
+
+            <img src="que-rollo.gif" alt="">
+        </div>
+
+        <div class="data-table">
+            <div class="table-column">
+                <h2>> TABLE BID-0042</h2>
+                <div class="table-entry">[REDACTED]</div>
+                <div class="table-entry">[ENCRYPTED]</div>
+                <div class="table-entry">[CLASSIFIED]</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dynamic system monitoring
+        function updateStats() {
+            document.getElementById('cpu-load').textContent = 
+                `${Math.floor(Math.random() * 40 + 60)}%`;
+            
+            document.getElementById('network-traffic').textContent = 
+                `${(Math.random() * 5).toFixed(1)}Gbit/s`;
+            
+            document.getElementById('sys-temp').textContent = 
+                `${Math.floor(Math.random() * 20 + 60)}°C`;
+        }
+
+        setInterval(updateStats, 2000);
+
+        // Interactive search bar
+        // document.querySelector('.search-bar').addEventListener('keyup', (e) => {
+        //     if(e.key === 'Enter') {
+        //         const searchTerm = e.target.value;
+        //         alert(`> SEARCHING ARCHIVES FOR: ${searchTerm}`);
+        //         e.target.value = '';
+        //     }
+        // });
+    </script>
+</body>
+</html>
