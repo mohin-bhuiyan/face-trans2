@@ -18,6 +18,7 @@ butto.addEventListener('click',(event)=>{
         loader.style.display='flex';
        audio.onended = function () {
             window.location.href = "deep3.html";
+            loader.style.display='hidden';
         };
 
     }else{
