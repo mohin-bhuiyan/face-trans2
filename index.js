@@ -4,6 +4,7 @@ let butto = document.querySelector('#login');
 
 let audio= document.querySelector('audio');
 
+let loader = document.querySelector('.loader');
 
 
 
@@ -14,6 +15,7 @@ butto.addEventListener('click',(event)=>{
         audio.currentTime= 0.2;
         audio.play();
 
+        loader.style.display='block';
        audio.onended = function () {
             window.location.href = "deep3.html";
         };
